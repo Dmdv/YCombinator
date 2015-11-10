@@ -11,10 +11,10 @@ namespace YCombinator
 			Console.WriteLine("Tenth");
 
 			var fact = Y<int, int>(g => n =>
-			{
-				if (n < 2) return 1;
-				return n * g(n - 1);
-			});
+				{
+					if (n < 2) return 1;
+					return n * g(n - 1);
+				});
 
 			Console.WriteLine(fact(10));
 
