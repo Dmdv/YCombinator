@@ -14,10 +14,10 @@ namespace YCombinator
 				h => ((SelfDelegate<Func<int, int>>)(f => f(f)))(b => h(n => b(b)(n)));
 
 			var fact = y(g => n =>
-					{
-						if (n < 2) return 1;
-						return n * g(n - 1);
-					});
+				{
+					if (n < 2) return 1;
+					return n * g(n - 1);
+				});
 
 			Console.WriteLine(fact(10));
 		}

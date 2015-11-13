@@ -22,6 +22,16 @@ namespace YCombinator
 				});
 
 			Console.WriteLine(fact(10));
+
+			SelfDelegate<Func<int, int>> func2 = f => n =>
+				{
+					if (n < 2) return 1;
+					return n * f(f)(n - 1);
+				};
+
+			var fact2 = func2(func2);
+
+			Console.WriteLine(fact2(10));
 		}
 	}
 }
